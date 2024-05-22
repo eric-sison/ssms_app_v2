@@ -1,13 +1,27 @@
 "use client";
 
 import { useRQDevtoolsProd } from "@mapstudio/lib/zustand/useRQDevtoolsProd";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@mapstudio/ui/components";
 import { Button } from "@mapstudio/ui/components/Button";
+import { useToast } from "@mapstudio/ui/hooks/use-toast";
 import { BlockQuote, Heading, Paragraph, InlineCode, Leading } from "@mapstudio/ui/typography";
 import { useTheme } from "next-themes";
 
 export default function Home() {
   const { setTheme } = useTheme();
   const devtools = useRQDevtoolsProd();
+  const { toast } = useToast();
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24">
@@ -32,6 +46,39 @@ export default function Home() {
         <Button onClick={() => setTheme("dark")}>Dark Theme</Button>
         <Button onClick={() => setTheme("system")}>System Theme</Button>
         <Button onClick={() => devtools.toggleShow()}>Toggle RQ Devtools</Button>
+        <Button
+          onClick={() => {
+            toast({
+              title: "Scheduled: Catch up",
+              description: "Friday, February 10, 2023 at 5:57 PM",
+            });
+          }}
+        >
+          Toast
+        </Button>
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button>Open</Button>
+          </SheetTrigger>
+          <SheetContent side="left">
+            <SheetHeader>
+              <SheetTitle>Are you absolutely sure?</SheetTitle>
+              <SheetDescription>
+                This action cannot be undone. This will permanently delete your account and remove
+                your data from our servers.
+              </SheetDescription>
+            </SheetHeader>
+          </SheetContent>
+        </Sheet>
+
+        <TooltipProvider delayDuration={0}>
+          <Tooltip>
+            <TooltipTrigger>Hover</TooltipTrigger>
+            <TooltipContent>
+              <p>Add to library</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       </div>
     </main>
   );
