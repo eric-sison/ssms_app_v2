@@ -1,14 +1,17 @@
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
 
-type RQDevtoolsProdOptions = {
+type RQDevtoolsState = {
   show: boolean;
-  toggleShow: () => void;
 };
 
-export const useRQDevtoolsProd = create<RQDevtoolsProdOptions>()(
+type RQDevtoolsActions = {
+  toggleDevtools: () => void;
+};
+
+export const useRQDevtoolsInProd = create<RQDevtoolsState & RQDevtoolsActions>()(
   devtools((set, get) => ({
     show: false,
-    toggleShow: () => set(() => ({ show: !get().show }), false, "toogle_devtools_in_prod"),
+    toggleDevtools: () => set(() => ({ show: !get().show }), false, "toogle_devtools_in_prod"),
   }))
 );

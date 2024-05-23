@@ -1,6 +1,6 @@
 "use client";
 
-import { useRQDevtoolsProd } from "@mapstudio/lib/zustand/useRQDevtoolsProd";
+import { useRQDevtoolsInProd } from "@mapstudio/lib/zustand/useRQDevtoolsProd";
 import {
   Sheet,
   SheetContent,
@@ -20,7 +20,7 @@ import { useTheme } from "next-themes";
 
 export default function Home() {
   const { setTheme } = useTheme();
-  const devtools = useRQDevtoolsProd();
+  const devtools = useRQDevtoolsInProd();
   const { toast } = useToast();
 
   return (
@@ -45,7 +45,7 @@ export default function Home() {
         <Button onClick={() => setTheme("light")}>Light Theme</Button>
         <Button onClick={() => setTheme("dark")}>Dark Theme</Button>
         <Button onClick={() => setTheme("system")}>System Theme</Button>
-        <Button onClick={() => devtools.toggleShow()}>Toggle RQ Devtools</Button>
+        <Button onClick={() => devtools.toggleDevtools()}>Toggle RQ Devtools</Button>
         <Button
           onClick={() => {
             toast({

@@ -7,7 +7,7 @@ import {
 } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import React from "react";
-import { useRQDevtoolsProd } from "@mapstudio/lib/zustand/useRQDevtoolsProd";
+import { useRQDevtoolsInProd } from "@mapstudio/lib/zustand/useRQDevtoolsProd";
 
 const ReactQueryDevtoolsProduction = React.lazy(() =>
   import("@tanstack/react-query-devtools/build/modern/production.js").then((d) => ({
@@ -18,13 +18,13 @@ const ReactQueryDevtoolsProduction = React.lazy(() =>
 export const QueryClientProvider: FunctionComponent<PropsWithChildren> = ({ children }) => {
   const [queryClient] = useState(new QueryClient());
 
-  const show = useRQDevtoolsProd((state) => state.show);
-  const toggleShow = useRQDevtoolsProd((state) => state.toggleShow);
+  const show = useRQDevtoolsInProd((state) => state.show);
+  const toggleDevtools = useRQDevtoolsInProd((state) => state.toggleDevtools);
 
   useEffect(() => {
     // @ts-expect-error
-    window.toggleDevtools = () => toggleShow();
-  }, [toggleShow, show]);
+    window.toggleDevtools = () => toggleDevtools();
+  }, [toggleDevtools, show]);
 
   return (
     <ReactQueryClientProvider client={queryClient}>
