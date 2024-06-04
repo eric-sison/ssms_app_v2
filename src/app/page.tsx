@@ -1,6 +1,6 @@
 "use client";
 
-import { useRQDevtoolsInProd } from "@mapstudio/lib/zustand/useRQDevtoolsProd";
+import { useRQDevtoolsInProd } from "@ssms/lib/zustand/useRQDevtoolsProd";
 import {
   Sheet,
   SheetContent,
@@ -12,10 +12,10 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@mapstudio/ui/components";
-import { Button } from "@mapstudio/ui/components/Button";
-import { useToast } from "@mapstudio/ui/hooks/use-toast";
-import { BlockQuote, Heading, Paragraph, InlineCode, Leading } from "@mapstudio/ui/typography";
+} from "@ssms/ui/components";
+import { Button } from "@ssms/ui/components/Button";
+import { useToast } from "@ssms/ui/hooks/use-toast";
+import { BlockQuote, Heading, Paragraph, InlineCode, Leading } from "@ssms/ui/typography";
 import { useTheme } from "next-themes";
 
 export default function Home() {

@@ -12,6 +12,6 @@
   },
   "aliases": {
     "components": "src/ui/components",
-    "utils": "@mapstudio/lib/utils"
+    "utils": "@ssms/lib/tw-class/utils"
   }
 }
