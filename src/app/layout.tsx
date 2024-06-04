@@ -17,7 +17,7 @@ type RootLayoutProps = Readonly<PropsWithChildren>;
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={`${inter.className} h-screen w-screen overflow-x-hidden overflow-y-hidden`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
