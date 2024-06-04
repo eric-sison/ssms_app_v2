@@ -1,7 +1,5 @@
 import { TicketStatus } from "@ssms/ui/features/Cards/TicketStatus";
-import { PageBody } from "@ssms/ui/features/PageLayout/Content/PageBody";
-import { PageHeader } from "@ssms/ui/features/PageLayout/Content/PageHeader";
-import { PageLink, PageLinks } from "@ssms/ui/features/PageLayout/Content/PageLinks";
+import { PageBody, PageHeader, PageLink, PageLinks } from "@ssms/ui/features/PageLayout/Content";
 import { Clock, Activity, FileCheck2, FileX2 } from "lucide-react";
 
 const links: Array<PageLink> = [

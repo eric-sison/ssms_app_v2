@@ -1,5 +1,4 @@
-import { PageHeader } from "@ssms/ui/features/PageLayout/Content/PageHeader";
-import { PageLink, PageLinks } from "@ssms/ui/features/PageLayout/Content/PageLinks";
+import { PageHeader, PageLink, PageLinks } from "@ssms/ui/features/PageLayout/Content";
 
 const links: Array<PageLink> = [
   {

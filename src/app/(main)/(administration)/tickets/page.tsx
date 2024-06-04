@@ -1,8 +1,6 @@
 import { TicketsDataTable } from "@ssms/ui/features/DataTables/Tickets/TicketsDataTable";
 import { Payment } from "@ssms/ui/features/DataTables/Tickets/columns";
-import { PageBody } from "@ssms/ui/features/PageLayout/Content/PageBody";
-import { PageHeader } from "@ssms/ui/features/PageLayout/Content/PageHeader";
-import { PageLink, PageLinks } from "@ssms/ui/features/PageLayout/Content/PageLinks";
+import { PageBody, PageHeader, PageLink, PageLinks } from "@ssms/ui/features/PageLayout/Content";
 
 // TODO: remove this sample data
 const data: Array<Payment> = [
