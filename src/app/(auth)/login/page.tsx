@@ -1,4 +1,4 @@
-import { Button, Input, Label } from "@mapstudio/ui/components";
+import { Button, Input, Label } from "@ssms/ui/components";
 import Image from "next/image";
 import Link from "next/link";
 

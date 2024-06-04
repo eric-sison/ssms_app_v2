@@ -27,6 +27,7 @@ export * from "./Input";
 export * from "./InputOtp";
 export * from "./Label";
 export * from "./Menubar";
+export * from "./Modal";
 export * from "./Pagination";
 export * from "./Popover";
 export * from "./Progress";
